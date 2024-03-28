@@ -1,0 +1,17 @@
+version: "0"
+rules:
+  - project: 1
+    on:
+      issue:
+        - opened
+        - assigned
+    issue:
+      assignees:
+        - assignee
+  - project: 2
+    on:
+      issue: opened
+      pr: opened
+    repo:
+      name:
+        - autopj

@@ -1,0 +1,41 @@
+{
+  "version": "0",
+  "rules": [
+    {
+      "repo": {
+        "name": ["example-repo1", "example-repo2", "/example-/"],
+        "topics": ["example-topic"]
+      },
+      "issue": { "assignees": ["octocat", "codercat"], "labels": "bug" },
+      "project": 1
+    },
+    {
+      "repo": {
+        "full_name": "/the_owner/example-/",
+        "description": "/repository|repo/",
+        "private": false
+      },
+      "issue": { "assignees": ["org/teams"] },
+      "project": [2, 3]
+    },
+    {
+      "repo": { "fork": false },
+      "issue": { "assignees": ["org/teams", "ghost"] },
+      "project": [4]
+    },
+    {
+      "project": [5],
+      "repo": { "name": "autoproject" },
+      "pr": {
+        "reviewers": ["org/teams", "octocat"],
+        "assignees": ["org/teams", "octocat"]
+      }
+    },
+    {
+      "project": 6,
+      "repo": { "name": "autoproject" },
+      "on": { "pr": "assigned" }
+    },
+    { "project": { "only": 9 }, "pr": { "head": { "ref": "/^renovate/.*/" } } }
+  ]
+}

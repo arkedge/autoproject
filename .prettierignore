@@ -1,0 +1,6 @@
+/dist/
+/node_modules/
+/deploy/
+/crates/*/pkg
+/crates/*/target
+src/configFormat/json.js

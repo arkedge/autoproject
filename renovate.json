@@ -1,0 +1,10 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "postUpdateOptions": ["yarnDedupeHighest"]
+}

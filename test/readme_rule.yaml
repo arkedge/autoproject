@@ -1,0 +1,69 @@
+version: "0"
+rules:
+  - repo:
+      # 正規表現と文字列は共存できる
+      name:
+        - example-repo1
+        - example-repo2
+        - /example-/
+      # 1つでも"topic"ではなく"topics"とする
+      topics:
+        - example-topic
+    issue:
+      # 1つ（1人）でも"assignee"ではなく"assignees"とする
+      assignees:
+        # login nameの方（URLに書いてある方）を記入する
+        - octocat
+        - codercat
+      labels: bug
+    # projectの指定は必須．repo, issueは両方あっても両方なくても（この場合警告する）動作する
+    project: 1
+  - repo:
+      # 正規表現リテラルでなく文字列としてパースされるためエスケープは不要
+      full_name: /the_owner/example-/
+      description: /repository|repo/
+      private: false
+    issue:
+      assignees:
+        # Teamsを指定できる．属する人を直接列挙するのと同等．
+        # autopj起動後，初回判定時にメンバーを取得する．
+        - org/teams
+    # 複数の project idを指定できる
+    project:
+      - 2
+      - 3
+  - repo:
+      fork: false
+    issue:
+      assignees:
+        - org/teams
+        - ghost
+    project:
+      - 4
+  - project: # プロパティは順不同なので例えば先頭に書いても良い
+      - 5
+    repo:
+      name: autoproject
+    # issueと同時には指定できない．prを指定した場合prに関連するイベントでのみ発火．
+    pr:
+      reviewers:
+        # reviewerにTeamを指定するものには未対応．userを複数指定するのと同じ．
+        - org/teams
+        - octocat
+      assignees:
+        - org/teams
+        - octocat
+  - project: 6
+    repo:
+      name: autoproject
+    # 発火タイミングを指定できる．指定しない場合は全てのイベントで発火
+    on:
+      pr: assigned
+  - project:
+      # 除外ルール（ブラックリスト）の一つ
+      # onlyに引っかかった場合，それ以外の規則を無視してこれのみになる
+      # onlyとnotは通常より強い優先度を持つ
+      only: 9
+    pr:
+      head:
+        ref: /^renovate/.*/

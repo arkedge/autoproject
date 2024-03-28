@@ -1,0 +1,16 @@
+version: "0"
+rules:
+  - issue:
+      assignees:
+        - a
+    project: 1
+
+  - issue:
+      assignees:
+        - b
+    project: 2
+
+  - issue:
+      assignees:
+        - c
+    project: 3

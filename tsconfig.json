@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true
+  },
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowJs": true,
+    "outDir": "dist"
+  },
+  "include": ["./src"]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "autoproject",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "autopjlint": "node dist/lint.js",
+    "start": "node dist/index.js",
+    "compileNearley": "echo '/* eslint-disable */' > src/configFormat/json.js && nearleyc src/configFormat/json.ne >> src/configFormat/json.js",
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint:prettier": "prettier . --check",
+    "lint:eslint": "eslint . --format stylish",
+    "lint": "run-p lint:*",
+    "fix:prettier": "yarn lint:prettier --write",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix": "run-s fix:prettier fix:eslint"
+  },
+  "dependencies": {
+    "@octokit/app": "14.0.2",
+    "@octokit/graphql-schema": "15.3.0",
+    "@prantlf/jsonlint": "14.0.3",
+    "dotenv": "16.4.5",
+    "fuse.js": "6.6.2",
+    "log4js": "6.9.1",
+    "mitt": "3.0.1",
+    "nearley": "2.20.1",
+    "yaml": "2.3.4",
+    "yargs": "17.7.2",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@octokit/types": "12.6.0",
+    "@tsconfig/node20": "20.1.4",
+    "@types/nearley": "2.11.5",
+    "@types/node": "20.11.30",
+    "@types/yargs": "17.0.32",
+    "@typescript-eslint/eslint-plugin": "6.4.0",
+    "@typescript-eslint/parser": "6.4.0",
+    "eslint": "8.57.0",
+    "eslint-config-love": "43.1.0",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "15.7.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-promise": "6.1.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.8.8",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3",
+    "vitest": "1.4.0"
+  }
+}
