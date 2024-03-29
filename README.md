@@ -2,9 +2,13 @@
 
 自動で Issue を Project に登録する
 
+config ファイルに基づき，Issue と PR を Project に自動登録します．適切な環境変数のもとで，起動すると Webhooks を受け付け，Project 追加は graphql でリクエストを飛ばすという実装につき，動作には GitHub app 側で相応の設定が必要です．
+
 ## config
 
 サンプル：[test/readme_rule.yaml](/test/readme_rule.yaml)
+
+ルール毎に OR，プロパティ毎に AND，プロパティの値のリストは OR を取ったものとして扱います．各ルールを独立に追加し，ルールにおける絞り込みはプロパティの追加や正規表現で行うことを想定しています．
 
 スキーマは，typescript 的に次と同じ（型名は実際のものと異なる）
 
