@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "autopjlint": "node dist/lint.js",
+    "check": "node dist/check.js",
     "start": "node dist/index.js",
     "compileNearley": "echo '/* eslint-disable */' > src/configFormat/json.js && nearleyc src/configFormat/json.ne >> src/configFormat/json.js",
     "build": "tsc",
