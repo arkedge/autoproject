@@ -17,8 +17,8 @@
     "fix": "run-s fix:prettier fix:eslint"
   },
   "dependencies": {
-    "@octokit/app": "14.0.2",
-    "@octokit/graphql-schema": "15.3.0",
+    "@octokit/app": "14.1.0",
+    "@octokit/graphql-schema": "15.4.2",
     "@prantlf/jsonlint": "14.0.3",
     "dotenv": "16.4.5",
     "fuse.js": "6.6.2",

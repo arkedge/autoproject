@@ -249,10 +249,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/app@14.0.2":
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/@octokit/app/-/app-14.0.2.tgz#b47c52020221351fb58640f113eb38b2ad3998fe"
-  integrity sha512-NCSCktSx+XmjuSUVn2dLfqQ9WIYePGP95SDJs4I9cn/0ZkeXcPkaoCLl64Us3dRKL2ozC7hArwze5Eu+/qt1tg==
+"@octokit/app@14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@octokit/app/-/app-14.1.0.tgz#2d491dc70746773b83f61edf5c56817dd7d3854b"
+  integrity sha512-g3uEsGOQCBl1+W1rgfwoRFUIR6PtvB2T1E4RpygeUU5LrLvlOqcxrt5lfykIeRpUPpupreGJUYl70fqMDXdTpw==
   dependencies:
     "@octokit/auth-app" "^6.0.0"
     "@octokit/auth-unauthenticated" "^5.0.0"
@@ -346,10 +346,10 @@
     "@octokit/types" "^12.0.0"
     universal-user-agent "^6.0.0"
 
-"@octokit/graphql-schema@15.3.0":
-  version "15.3.0"
-  resolved "https://registry.yarnpkg.com/@octokit/graphql-schema/-/graphql-schema-15.3.0.tgz#2a6c67a21b57b72771b857b3cd867fa02ed744b7"
-  integrity sha512-yGj0haNZY1/4DZO72KpJdOzvKQFYPUkD5d6PdntPSbekABUoOdStAtEsOtuwZz52cPrbQEEoZ0wN7aemA1y8PA==
+"@octokit/graphql-schema@15.4.2":
+  version "15.4.2"
+  resolved "https://registry.yarnpkg.com/@octokit/graphql-schema/-/graphql-schema-15.4.2.tgz#93d2b85d2aff3d1c1ff3a2cde92158ccb6051997"
+  integrity sha512-PIfFAnTgRN5MW9ndnYIL3R07LZXQd8JlP1e2s4Ku7T+pvVXgl8JaAuongNdImKYOhrqEukgXNusKTZc2KEXUmg==
   dependencies:
     graphql "^16.0.0"
     graphql-tag "^2.10.3"
