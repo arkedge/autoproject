@@ -10,7 +10,7 @@ import {
 import { type ObjPath } from "../types";
 
 const parserGrammar = nearley.Grammar.fromCompiled(
-  grammar as nearley.CompiledRules
+  grammar as nearley.CompiledRules,
 );
 
 export type JsonTagged<T> = {
@@ -215,7 +215,7 @@ function findDelegator(node: Value | null) {
   return (keyName: string): DocumentNode | null => {
     if (node?.type === "Object") {
       const key = node?.children.find(
-        (pair) => pair.key.value.toString() === keyName
+        (pair) => pair.key.value.toString() === keyName,
       )?.key;
       if (typeof key === "undefined") {
         return null;

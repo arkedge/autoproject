@@ -48,7 +48,7 @@ assert(input, "--input <PATH> or process.env.RULES_FILE is required");
 
 const printSemDiag = (
   filepath: string,
-  { range, msg, objPath, diagKind }: SemDiag
+  { range, msg, objPath, diagKind }: SemDiag,
 ) => {
   let semPos;
   if (objPath.length === 0) {
@@ -152,7 +152,7 @@ if (!docResult.is_ok) {
             docResult.docRaw.value,
             e.diag.objPath,
             key.value,
-            candidates[0]
+            candidates[0],
           );
           modified = true;
         }

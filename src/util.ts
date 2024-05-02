@@ -18,7 +18,7 @@ import {
 
 export const readAndParse = <T>(
   filepath: string | undefined,
-  parser: (format: EitherFormat, filepath: string, src: string) => T
+  parser: (format: EitherFormat, filepath: string, src: string) => T,
 ) => {
   if (typeof filepath === "undefined") {
     return null;
@@ -37,7 +37,7 @@ export const readAndParse = <T>(
     default:
       assert(
         false,
-        "received unknown extension. please use `.json` or `.yaml` or `.yml`."
+        "received unknown extension. please use `.json` or `.yaml` or `.yml`.",
       );
   }
   return parser(getFormat(formatKind), filepath, raw);
@@ -47,7 +47,7 @@ export const renameProp = (
   doc: YAML.Document.Parsed,
   path: ObjPath,
   oldProp: string,
-  newProp: string
+  newProp: string,
 ) => {
   const node = doc.getIn(path);
   assert(isMap(node));
@@ -65,7 +65,7 @@ export const doLogError = () => {
   emitter.on("semerror", ({ filepath, diags }: SemErrorPayload) => {
     const cat = path.basename(filepath);
     getLogger(cat).error(
-      "Some semantic errors occurred while validating config file. Below are reported:"
+      "Some semantic errors occurred while validating config file. Below are reported:",
     );
     for (const diag of diags) {
       const _path = stringifyObjPath(diag.objPath);
@@ -77,7 +77,7 @@ export const doLogError = () => {
   emitter.on("synerror", ({ filepath, diags }: SynErrorPayload) => {
     const cat = path.basename(filepath);
     getLogger(cat).error(
-      "Some syntactic errors occurred while validating config file. Below are reported:"
+      "Some syntactic errors occurred while validating config file. Below are reported:",
     );
     for (const diag of diags) {
       const { range, msg } = diag;

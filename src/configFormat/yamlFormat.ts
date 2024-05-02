@@ -24,7 +24,7 @@ type ParseResultWrapped<T, U> = ParseResult<YamlTagged<T>, YamlTagged<U>>;
 
 export class YamlFormat implements Format {
   parse(
-    s: string
+    s: string,
   ): ParseResultWrapped<YamlDocument, YAML.Document.Parsed<YAML.ParsedNode>> {
     const lineCounter = new LineCounter();
     const doc = YAML.parseDocument(s, { lineCounter, prettyErrors: true });
@@ -45,7 +45,7 @@ export class YamlFormat implements Format {
 export class YamlDocument implements Document {
   constructor(
     private readonly doc: YAML.Document.Parsed,
-    private readonly lineCounter: LineCounter
+    private readonly lineCounter: LineCounter,
   ) {}
 
   toJS() {
@@ -77,7 +77,7 @@ export class YamlDocument implements Document {
 
 function toDocumentNode(
   node: YAML.ParsedNode,
-  lineCounter: LineCounter
+  lineCounter: LineCounter,
 ): DocumentNode & FindKey {
   return {
     loc: {
@@ -92,7 +92,7 @@ function findDelegator(node: YAML.ParsedNode | null, lineCounter: LineCounter) {
   return (keyName: string) => {
     if (YAML.isMap(node)) {
       const key = node?.items.find(
-        (pair) => pair.key.toString() === keyName
+        (pair) => pair.key.toString() === keyName,
       )?.key;
       if (typeof key === "undefined") {
         return null;
