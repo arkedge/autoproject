@@ -23,7 +23,7 @@ type User = Organization;
 async function fetchProjectIdCached(
   octokit: Octokit,
   login: string,
-  projectNumber: number
+  projectNumber: number,
 ): Promise<{
   projectId: string;
 }> {
@@ -50,7 +50,7 @@ async function fetchProjectIdCached(
         {
           login,
           projectNumber,
-        }
+        },
       );
       const projectId = projectV2.id;
       orgMap.set(projectNumber, projectId);
@@ -78,7 +78,7 @@ async function fetchProjectIdCached(
         {
           login,
           projectNumber,
-        }
+        },
       );
       const projectId = projectV2.id;
       userMap.set(projectNumber, projectId);
@@ -106,7 +106,7 @@ async function fetchProjectIdCached(
           {
             login,
             projectNumber,
-          }
+          },
         );
       } catch (error) {
         err = error;
@@ -139,12 +139,12 @@ export async function addIssueToProject(
   octokit: Octokit,
   issueId: string,
   login: string,
-  projectNumber: number
+  projectNumber: number,
 ) {
   const { projectId } = await fetchProjectIdCached(
     octokit,
     login,
-    projectNumber
+    projectNumber,
   );
   await octokit.graphql(
     `mutation($projectId: ID!, $contentId: ID!) {
@@ -157,7 +157,7 @@ export async function addIssueToProject(
     {
       projectId,
       contentId: issueId,
-    }
+    },
   );
 }
 
@@ -168,14 +168,14 @@ export interface GetTeamMemberProp {
 export async function getAllTeamMember(
   { octokit }: GetTeamMemberProp,
   organization: string,
-  teamSlug: string
+  teamSlug: string,
 ): Promise<Login[]> {
   const resp = await octokit.request(
     "GET /orgs/{org}/teams/{team_slug}/members",
     {
       org: organization,
       team_slug: teamSlug,
-    }
+    },
   );
   return resp.data ?? [];
 }

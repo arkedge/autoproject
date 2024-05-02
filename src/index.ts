@@ -66,7 +66,7 @@ if (
 
 const privateKey = fs.readFileSync(
   envInput.GITHUB_APP_PRIVATE_KEY_FILE,
-  "utf-8"
+  "utf-8",
 );
 
 const rules = readAndParse(envInput.RULES_FILE, processRules)?.content ?? [];
@@ -92,7 +92,7 @@ const app = new App({
 
 async function determineDestination(
   webhookEvent: WebhookEventAction,
-  arg: MatchArg
+  arg: MatchArg,
 ): Promise<Set<number>> {
   const projectNumberSet = new Set<number>();
 
@@ -190,7 +190,7 @@ const handleEvent =
     return await Promise.all(
       [...destinations].map(async (projectNumber) => {
         await addIssueToProject(w.octokit, nodeId, login, projectNumber);
-      })
+      }),
     );
   };
 
@@ -200,15 +200,15 @@ app.webhooks.on("issues.labeled", handleEvent(issuesEventPayloadToArg));
 
 app.webhooks.on(
   "pull_request.opened",
-  handleEvent(pullRequestEventPayloadToArg)
+  handleEvent(pullRequestEventPayloadToArg),
 );
 app.webhooks.on(
   "pull_request.assigned",
-  handleEvent(pullRequestEventPayloadToArg)
+  handleEvent(pullRequestEventPayloadToArg),
 );
 app.webhooks.on(
   "pull_request.labeled",
-  handleEvent(pullRequestEventPayloadToArg)
+  handleEvent(pullRequestEventPayloadToArg),
 );
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises

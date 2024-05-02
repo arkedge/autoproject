@@ -94,7 +94,7 @@ interface Rule {
 export async function getMatchedProj(
   rules: Rule[],
   webhookEvent: WebhookEventAction,
-  obj: MatchArg
+  obj: MatchArg,
 ): Promise<number[]> {
   const ruleMatchedProjectNumbers = await Promise.all(
     rules.map(async (rule) => {
@@ -104,7 +104,7 @@ export async function getMatchedProj(
         }
       }
       return [];
-    })
+    }),
   );
   const targetProjs: TargetProj[] = ruleMatchedProjectNumbers.flat();
   return filterTargetProjs(targetProjs);
@@ -114,7 +114,7 @@ function filterTargetProjs(targetProjs: TargetProj[]): number[] {
   // lift `priority` from `TargetProjNumber`
   const targetProjsFlat = targetProjs.flatMap(
     (
-      p: TargetProj
+      p: TargetProj,
     ): Array<
       | ({ kind: TargetProjKind.Number } & TargetProjNumber)
       | TargetProjOnly
@@ -127,7 +127,7 @@ function filterTargetProjs(targetProjs: TargetProj[]): number[] {
         }));
       }
       return [p];
-    }
+    },
   );
   // dictionary order (priority >> kind)
   targetProjsFlat.sort((a, b) => {
@@ -172,13 +172,13 @@ function filterTargetProjs(targetProjs: TargetProj[]): number[] {
 export function processRulesV0(
   format: EitherFormat,
   filepath: string,
-  src: string
+  src: string,
 ): ParseResult<Config> {
   const { docResult, content, error } = parseFile(
     format,
     configSchema,
     filepath,
-    src
+    src,
   );
   return {
     docResult,
@@ -229,7 +229,7 @@ function parseFile<Schema extends z.ZodType<any, any, any>>(
   format: EitherFormat,
   schema: Schema,
   filepath: string,
-  yaml: string
+  yaml: string,
 ): ParseResult<Schema["_output"]> {
   const result = format.parse(yaml);
   if (!result.is_ok) {
@@ -336,13 +336,13 @@ function getWebhookEventTarget(parsed: RuleSchema): WebhookEventActionTarget {
 export function processRules(
   format: EitherFormat,
   filepath: string,
-  src: string
+  src: string,
 ): ParseResult<Rule[]> {
   const { docResult, content, error } = parseFile(
     format,
     versionedSchema,
     filepath,
-    src
+    src,
   );
   return {
     docResult,
@@ -426,7 +426,7 @@ const extractSemDiag = (doc: Document, error: z.ZodError) => {
     if (
       (issue.code === "invalid_union" &&
         issue.unionErrors.every((e) =>
-          e.errors.every((e) => e.message === "Required")
+          e.errors.every((e) => e.message === "Required"),
         )) ||
       issue.message === "Required"
     ) {

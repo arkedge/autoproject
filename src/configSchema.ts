@@ -61,7 +61,7 @@ const composeEAsync =
     const y = flatten(f(x));
     return await existsAsync(
       g,
-      async (g) => await existsAsync(y, async (y) => await g(y))
+      async (g) => await existsAsync(y, async (y) => await g(y)),
     );
   };
 
@@ -78,7 +78,7 @@ const composeAAsync =
     const y = flatten(f(x));
     return await forallAsync(
       g,
-      async (g) => await existsAsync(y, async (y) => await g(y))
+      async (g) => await existsAsync(y, async (y) => await g(y)),
     );
   };
 
@@ -147,7 +147,7 @@ const numberParser = z.union([_number.transform(unit), _number.array()], {
             (i) =>
               // i.code === z.ZodIssueCode.invalid_type is required because of type inference
               i.code === z.ZodIssueCode.invalid_type &&
-              i.received === z.ZodParsedType.array
+              i.received === z.ZodParsedType.array,
           )
         ) {
           // error is array of something
@@ -239,7 +239,7 @@ const loginEq =
       return async (x: X & GetTeamMemberProp) => {
         const y = await p(x);
         return proj(x).some((g) =>
-          y.some((y) => curryingStrictEq(g.login)(y.login))
+          y.some((y) => curryingStrictEq(g.login)(y.login)),
         );
       };
     }
@@ -258,7 +258,7 @@ const labelParser = stringish
 
 const issueSchema = z.object({
   assignees: loginParser(
-    (x: Issue & GetTeamMemberProp) => x.assignees
+    (x: Issue & GetTeamMemberProp) => x.assignees,
   ).transform(extendEAsync((x: Issue & GetTeamMemberProp) => x)),
   labels: labelParser
     .transform(extendPropE<Issue>()("labels"))
@@ -274,10 +274,10 @@ const prSchema = z.object({
       } else {
         return [];
       }
-    })
+    }),
   ).transform(extendEAsync((x: PullRequest & GetTeamMemberProp) => x)),
   assignees: loginParser(
-    (x: PullRequest & GetTeamMemberProp) => x.assignees
+    (x: PullRequest & GetTeamMemberProp) => x.assignees,
   ).transform(extendEAsync((x: PullRequest & GetTeamMemberProp) => x)),
   labels: labelParser
     .transform(extendPropE<PullRequest>()("labels"))
@@ -363,7 +363,7 @@ const targetProjNumberSchema = _number
           return projectNumber;
         }),
       })
-      .transform((x) => x.not)
+      .transform((x) => x.not),
   );
 
 const targetProjSchema = targetProjNumberSchema
@@ -387,7 +387,7 @@ const targetProjSchema = targetProjNumberSchema
           return r;
         }),
       })
-      .transform((x) => x.only)
+      .transform((x) => x.only),
   )
   .or(
     z
@@ -400,7 +400,7 @@ const targetProjSchema = targetProjNumberSchema
           return r;
         }),
       })
-      .transform((x) => x.reject)
+      .transform((x) => x.reject),
   );
 
 const ruleSchema = payloadSchema
@@ -411,7 +411,7 @@ const ruleSchema = payloadSchema
   .strict()
   .refine(
     (p) => typeof p.issue === "undefined" || typeof p.pr === "undefined",
-    "issue and pr cannot be specified together"
+    "issue and pr cannot be specified together",
   )
   .refine((p) => {
     // issue rule

@@ -125,7 +125,7 @@ export type WebhookEventActionTarget =
 
 export const isTargetWebhookEvent = (
   et: WebhookEventActionTarget,
-  event: WebhookEventAction
+  event: WebhookEventAction,
 ) => {
   switch (event.kind) {
     case WebhookEventKind.Issue:

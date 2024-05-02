@@ -104,28 +104,28 @@ it("can match with readme rules", async () => {
   await expect(rules[2].test(obj)).resolves.toBeTruthy();
   expect(
     mock,
-    "acquire team member the first time we need"
+    "acquire team member the first time we need",
   ).toHaveBeenCalledTimes(1);
 
   await expect(
     getMatchedProj(
       rules,
       { kind: WebhookEventKind.Issue, action: "assigned" },
-      obj
-    )
+      obj,
+    ),
   ).resolves.toEqual([1, 4]);
 
   await expect(rules[2].test(obj2)).resolves.toBeFalsy();
   expect(
     mock,
-    "once called, it will not be called again"
+    "once called, it will not be called again",
   ).toHaveBeenCalledTimes(1);
   await expect(
     getMatchedProj(
       rules,
       { kind: WebhookEventKind.Issue, action: "assigned" },
-      obj2
-    )
+      obj2,
+    ),
   ).resolves.toEqual([]);
 
   await expect(rules[3].test(obj3)).resolves.toBeFalsy();
@@ -137,8 +137,8 @@ it("can match with readme rules", async () => {
     getMatchedProj(
       rules,
       { kind: WebhookEventKind.PullRequest, action: "assigned" },
-      obj4
-    )
+      obj4,
+    ),
   ).resolves.toEqual([9]);
 });
 
@@ -217,7 +217,7 @@ it("treat rules about issue and pr exclusively", () => {
         pr:
           - assigned
       project: 1`,
-    "issue rule on pr event"
+    "issue rule on pr event",
   );
 });
 
@@ -253,8 +253,8 @@ it("can limit firing event", async () => {
         kind: WebhookEventKind.Issue,
         action: "assigned",
       },
-      arg("assignee")
-    )
+      arg("assignee"),
+    ),
   ).resolves.toEqual([1]);
   await expect(
     getMatchedProj(
@@ -263,8 +263,8 @@ it("can limit firing event", async () => {
         kind: WebhookEventKind.Issue,
         action: "opened",
       },
-      arg("assignee")
-    )
+      arg("assignee"),
+    ),
   ).resolves.toEqual([1, 2]);
   await expect(
     getMatchedProj(
@@ -273,8 +273,8 @@ it("can limit firing event", async () => {
         kind: WebhookEventKind.PullRequest,
         action: "opened",
       },
-      arg("assignee")
-    )
+      arg("assignee"),
+    ),
   ).resolves.toEqual([2]);
   await expect(
     getMatchedProj(
@@ -283,7 +283,7 @@ it("can limit firing event", async () => {
         kind: WebhookEventKind.PullRequest,
         action: "assigned",
       },
-      arg("assignee")
-    )
+      arg("assignee"),
+    ),
   ).resolves.toEqual([]);
 });
