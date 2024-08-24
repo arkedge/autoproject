@@ -463,10 +463,10 @@
     "@octokit/webhooks-types" "7.4.0"
     aggregate-error "^3.1.0"
 
-"@prantlf/jsonlint@14.1.0":
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/@prantlf/jsonlint/-/jsonlint-14.1.0.tgz#3f806e899a1ebca26b3756ffb4a1f0c2d3b8a214"
-  integrity sha512-4OBJHQmFbvL+VWeI0dzN2ugXD+L0ZAKSfLn5kpsNjhCo39eEId/ftiJXWwVifKVYwATbqaLaXhQBhHwvAOaanw==
+"@prantlf/jsonlint@16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@prantlf/jsonlint/-/jsonlint-16.0.0.tgz#013a86028226cde79c0bdb5924747535b0d2de14"
+  integrity sha512-L0jFtcsBRJZOr4T6sbePb1R6XYF6Nofj6kmEAxqTKCHEr50uvyxBFnB1UKaehWaMhHnvtyqWfTR5Go25RywXIQ==
   dependencies:
     ajv "8.17.1"
     ajv-draft-04 "1.0.0"
