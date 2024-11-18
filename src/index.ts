@@ -211,5 +211,17 @@ app.webhooks.on(
   handleEvent(pullRequestEventPayloadToArg),
 );
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
-http.createServer(createNodeMiddleware(app)).listen(8124);
+const middleware = createNodeMiddleware(app);
+http
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  .createServer(async (req, res) => {
+    // `middleware` returns `false` when `req` is unhandled
+    if (await middleware(req, res)) return;
+    if (req.url === "/healthcheck") {
+      res.writeHead(200);
+    } else {
+      res.writeHead(404);
+    }
+    res.end();
+  })
+  .listen(8124);
