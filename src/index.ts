@@ -20,6 +20,8 @@ import {
 configLogger();
 doLogError();
 
+const defaultPort = 8124;
+
 const logger = log4js.getLogger("general");
 logger.info("process started.");
 
@@ -36,6 +38,8 @@ const envSchema = z.object({
   RULES_FILE_V0: z.string().optional(),
   // compatibility with old config format
   LABEL_CLASSIFICATION_FILE: z.string().optional(),
+  // the port that http server listen on
+  PORT: z.string().optional(),
 });
 
 const envParseResult = envSchema.safeParse(process.env);
@@ -54,6 +58,7 @@ const envInput = {
   RULES_FILE_V0:
     envParseResult.data.CONFIG_FILE ?? envParseResult.data.RULES_FILE_V0,
   LABEL_CLASSIFICATION_FILE: envParseResult.data.LABEL_CLASSIFICATION_FILE,
+  PORT: envParseResult.data.PORT ?? defaultPort,
 };
 if (
   typeof envInput.RULES_FILE === "undefined" &&
@@ -211,6 +216,8 @@ app.webhooks.on(
   handleEvent(pullRequestEventPayloadToArg),
 );
 
+logger.info(`listening on port ${envInput.PORT}`);
+
 const middleware = createNodeMiddleware(app);
 http
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -224,4 +231,4 @@ http
     }
     res.end();
   })
-  .listen(8124);
+  .listen(envInput.PORT);
