@@ -120,6 +120,19 @@ export const configLogger = () => {
   });
 };
 
+export const readGithubAppPrivateKey = (
+  path: string | undefined,
+  content: string | undefined,
+): string => {
+  if (path !== undefined) {
+    return fs.readFileSync(path, "utf-8");
+  }
+  if (content !== undefined) {
+    return content;
+  }
+  throw new Error("invalid args. path and content are undefined");
+};
+
 declare const _loggerCat: unique symbol;
 export type LoggerCat = string & { readonly [_loggerCat]: never };
 
