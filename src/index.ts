@@ -1,4 +1,3 @@
-import * as fs from "fs";
 import * as http from "http";
 import { App, createNodeMiddleware } from "@octokit/app";
 import { type Octokit } from "@octokit/core";
@@ -9,7 +8,12 @@ import {
 import { z } from "zod";
 import log4js from "log4js";
 import { processRulesV0, processRules, getMatchedProj } from "./config";
-import { configLogger, doLogError, readAndParse } from "./util";
+import {
+  configLogger,
+  doLogError,
+  readAndParse,
+  readGithubAppPrivateKey,
+} from "./util";
 import { addIssueToProject } from "./github";
 import {
   type MatchArg,
@@ -27,9 +31,8 @@ logger.info("process started.");
 
 const envSchema = z.object({
   GITHUB_APP_ID: z.string({ required_error: "GITHUB_APP_ID is required" }),
-  GITHUB_APP_PRIVATE_KEY_FILE: z.string({
-    required_error: "GITHUB_APP_PRIVATE_KEY_FILE is required",
-  }),
+  GITHUB_APP_PRIVATE_KEY_FILE: z.string().optional(),
+  GITHUB_APP_PRIVATE_KEY: z.string().optional(),
   WEBHOOK_SECRET: z.string({ required_error: "WEBHOOK_SECRET is required" }),
   RULES_FILE: z.string({ required_error: "RULES_FILE is required" }).optional(),
   // legacy, for compatibility
@@ -53,6 +56,7 @@ if (!envParseResult.success) {
 const envInput = {
   GITHUB_APP_ID: envParseResult.data.GITHUB_APP_ID,
   GITHUB_APP_PRIVATE_KEY_FILE: envParseResult.data.GITHUB_APP_PRIVATE_KEY_FILE,
+  GITHUB_APP_PRIVATE_KEY: envParseResult.data.GITHUB_APP_PRIVATE_KEY,
   WEBHOOK_SECRET: envParseResult.data.WEBHOOK_SECRET,
   RULES_FILE: envParseResult.data.RULES_FILE,
   RULES_FILE_V0:
@@ -68,10 +72,20 @@ if (
   logger.error("either RULES_FILE or CONFIG_FILE must be specified.");
   process.exit(1);
 }
+if (
+  typeof envInput.GITHUB_APP_PRIVATE_KEY_FILE === "undefined" &&
+  typeof envInput.GITHUB_APP_PRIVATE_KEY === "undefined"
+) {
+  logger.error("environment variable validation failed.");
+  logger.error(
+    "either GITHUB_APP_PRIVATE_KEY_FILE or GITHUB_APP_PRIVATE_KEY must be specified.",
+  );
+  process.exit(1);
+}
 
-const privateKey = fs.readFileSync(
+const privateKey = readGithubAppPrivateKey(
   envInput.GITHUB_APP_PRIVATE_KEY_FILE,
-  "utf-8",
+  envInput.GITHUB_APP_PRIVATE_KEY,
 );
 
 const rules = readAndParse(envInput.RULES_FILE, processRules)?.content ?? [];

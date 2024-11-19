@@ -120,6 +120,21 @@ export const configLogger = () => {
   });
 };
 
+export const readGithubAppPrivateKey = (
+  path: string | undefined,
+  content: string | undefined,
+): string => {
+  if (path !== undefined) {
+    getLogger().info(`read private key file: ${path}`);
+    return fs.readFileSync(path, "utf-8");
+  }
+  if (content !== undefined) {
+    getLogger().info("use private key passed by value");
+    return content;
+  }
+  throw new Error("invalid args. path and content are undefined");
+};
+
 declare const _loggerCat: unique symbol;
 export type LoggerCat = string & { readonly [_loggerCat]: never };
 
