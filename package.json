@@ -20,7 +20,7 @@
     "@octokit/app": "14.1.0",
     "@octokit/graphql-schema": "15.25.0",
     "@prantlf/jsonlint": "16.0.0",
-    "dotenv": "16.4.5",
+    "dotenv": "16.4.6",
     "fuse.js": "6.6.2",
     "log4js": "6.9.1",
     "mitt": "3.0.1",
