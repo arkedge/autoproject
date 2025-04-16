@@ -1,0 +1,30 @@
+name: Release Source Map to Sentry
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-sourcemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Source Map
+        run: yarn build
+
+      - name: Install sentry-cli
+        run: curl -sL https://sentry.io/get-cli/ | sh
+
+      - name: Upload Source Map
+        run: sentry-cli sourcemaps upload --release=${{github.sha}} ./

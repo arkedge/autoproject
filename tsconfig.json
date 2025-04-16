@@ -7,7 +7,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "allowJs": true,
-    "outDir": "dist"
+    "outDir": "dist",
+
+    "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/"
   },
   "include": ["./src"]
 }
