@@ -79,3 +79,42 @@ type EventTarget = {
     | ("opened" | "assigned" | "labeled")[];
 };
 ```
+
+## Docker を使った実行方法
+
+簡単に Docker を使って検証する方法を説明します．
+他のオプションを指定する場合はコードを確認してください．
+
+### 必要なリソースの用意
+
+いくつか環境変数の指定が必要なため，.env ファイルを作成します．
+
+```bash
+RULES_FILE=/app/rules.yaml
+GITHUB_APP_ID=[github_app_id]
+PORT=8080
+WEBHOOK_SECRET=[github_webhook_secret]
+GITHUB_APP_PRIVATE_KEY_FILE=/app/github.key
+```
+
+ほか，root ディレクトリに以下のファイルを用意します．
+
+- rules.yaml
+  - 上の記法を参考に用意する
+- github.key
+  - Github App を登録してダウンロードする
+
+### 実行コマンド
+
+例として実行コマンドを示します．
+
+```bash
+cd ./autoproject
+docker build . -t autoproject
+docker run --env-file .env -p 8080:8080 autoproject
+```
+
+### 留意すべきポイント
+
+- 実行する際は Github から Webhook でアクセスできる必要があります
+- Github App に登録する際 Webhook 先のパスは `https://[your-host]/api/github/webhooks` としてください
