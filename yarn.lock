@@ -849,15 +849,15 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@sentry/core@9.14.0":
-  version "9.14.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.14.0.tgz#4d51bf0ff719a8dee821d31be4abf1afd73f6c6e"
-  integrity sha512-OLfucnP3LAL5bxVNWc2RVOHCX7fk9Er5bWPCS+O5cPjqNUUz0HQHhVh2Vhei5C0kYZZM4vy4BQit5T9LrlOaNA==
+"@sentry/core@9.15.0":
+  version "9.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.15.0.tgz#590f16a15596ce01db49d9d80b31cb18048ca9a4"
+  integrity sha512-lBmo3bzzaYUesdzc2H5K3fajfXyUNuj5koqyFoCAI8rnt9CBl7SUc/P07+E5eipF8mxgiU3QtkI7ALzRQN8pqQ==
 
 "@sentry/node@^9.12.0":
-  version "9.14.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.14.0.tgz#683d9dacc0d864710fe292e52e839e5fdc39c94f"
-  integrity sha512-AWPc6O+zAdSgnsiKm6Nb1txyiKCOIBriJEONdXFSslgZgkm8EWAYRRHyS2Hkmnz0/5bEQ3jEffIw22qJuaHN+Q==
+  version "9.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.15.0.tgz#f43954ed8ccdc1cb7d5c315b7d481c5f46300885"
+  integrity sha512-K0LdJxIzYbbsbiT+1tKgNq6MUHuDs2DggBDcFEp3T+yXVJYN1AyalUli06Kmxq8yvou6hgLwWL4gjIcB1IQySA==
   dependencies:
     "@opentelemetry/api" "^1.9.0"
     "@opentelemetry/context-async-hooks" "^1.30.1"
@@ -890,16 +890,16 @@
     "@opentelemetry/sdk-trace-base" "^1.30.1"
     "@opentelemetry/semantic-conventions" "^1.30.0"
     "@prisma/instrumentation" "6.6.0"
-    "@sentry/core" "9.14.0"
-    "@sentry/opentelemetry" "9.14.0"
+    "@sentry/core" "9.15.0"
+    "@sentry/opentelemetry" "9.15.0"
     import-in-the-middle "^1.13.0"
 
-"@sentry/opentelemetry@9.14.0":
-  version "9.14.0"
-  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.14.0.tgz#7454f23a4add2098a1364b8eea966c057503223e"
-  integrity sha512-NnHJjSQGpWaZ6+0QK9Xn1T3CTOM16Ij07VnSiGmVz3/IMsNC1/jndqc8p9BxEI+67XhZjOUUN0Ogpq1XRY7YeA==
+"@sentry/opentelemetry@9.15.0":
+  version "9.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.15.0.tgz#1888c8a08e69a49345d6a161a6dbc04fe6c7744f"
+  integrity sha512-gGOzgSxbuh4B4SlEonL1LFsazmeqL/fn5CIQqRG0UWWxdt6TKAMlj0ThIlGF3jSHW2eXdpvs+4E73uFEaHIqfg==
   dependencies:
-    "@sentry/core" "9.14.0"
+    "@sentry/core" "9.15.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -992,9 +992,9 @@
     "@types/pg" "*"
 
 "@types/pg@*":
-  version "8.11.13"
-  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.11.13.tgz#ab785528b173d9bf8623406d7611ee0c0c715914"
-  integrity sha512-6kXByGkvRvwXLuyaWzsebs2du6+XuAB2CuMsuzP7uaihQahshVgSmB22Pmh0vQMkQ1h5+PZU0d+Di1o+WpVWJg==
+  version "8.11.14"
+  resolved "https://registry.yarnpkg.com/@types/pg/-/pg-8.11.14.tgz#1762612081ce0984365b0ff1a6ffd59c8fcf7738"
+  integrity sha512-qyD11E5R3u0eJmd1lB0WnWKXJGA7s015nyARWljfz5DcX83TKAIlY+QrmvzQTsbIe+hkiFtkyL2gHC6qwF6Fbg==
   dependencies:
     "@types/node" "*"
     pg-protocol "*"
@@ -2789,9 +2789,9 @@ mitt@3.0.1:
   integrity sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==
 
 module-details-from-path@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/module-details-from-path/-/module-details-from-path-1.0.3.tgz#114c949673e2a8a35e9d35788527aa37b679da2b"
-  integrity sha512-ySViT69/76t8VhE1xXHK6Ch4NcDd26gx0MzKXLO+F7NOtnqH68d9zF94nT8ZWSxXh8ELOERsnJO/sWt1xZYw5A==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/module-details-from-path/-/module-details-from-path-1.0.4.tgz#b662fdcd93f6c83d3f25289da0ce81c8d9685b94"
+  integrity sha512-EGWKgxALGMgzvxYF1UyGTy0HXX/2vHLkw6+NvDKW2jypWbHpjQuj4UMcqQWXHERJhVGKikolT06G3bcKe4fi7w==
 
 moo@^0.5.0:
   version "0.5.2"
@@ -2991,9 +2991,9 @@ pg-numeric@1.0.2:
   integrity sha512-BM/Thnrw5jm2kKLE5uJkXqqExRUY/toLHda65XgFTBTFYZyopbKjBe29Ii3RbkvlsMoFwD+tHeGaCjjv0gHlyw==
 
 pg-protocol@*:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/pg-protocol/-/pg-protocol-1.9.0.tgz#d2a1f4289df6e969ff6c29753c05a4f88ca08911"
-  integrity sha512-6AkqYKbOwHVlDnXrOZlSkpvn9zBA4y87HGlrPhnSPLkcLRnTPcXm2C/CNrOkQB2T7QKYv+IzCcmW0K974n3z9Q==
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/pg-protocol/-/pg-protocol-1.9.5.tgz#e544eff37d6ab79c26281d7c0b59ac9be4862686"
+  integrity sha512-DYTWtWpfd5FOro3UnAfwvhD8jh59r2ig8bPtc9H8Ds7MscE/9NYruUQWFAOuraRl29jwcT2kyMFQ3MxeaVjUhg==
 
 pg-types@^2.2.0:
   version "2.2.0"
