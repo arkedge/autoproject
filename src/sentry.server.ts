@@ -11,6 +11,6 @@ if (envParseResult.success) {
   };
   Sentry.init({
     dsn: envInput.SENTRY_DSN,
-    tracesSampleRate: 1.0,
+    tracesSampleRate: 0.25,
   });
 }
