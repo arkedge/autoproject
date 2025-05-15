@@ -9,7 +9,7 @@ export default tseslint.config({
   extends: [
     globalIgnores(["dist/", "crates/*/pkg", "src/configFormat/json.js"]),
     eslint.configs.recommended,
-    ...tseslint.configs.recommended,
+    tseslint.configs.recommended,
     love,
     eslintConfigPrettier,
   ],
