@@ -184,16 +184,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@fastify/otel@https://codeload.github.com/getsentry/fastify-otel/tar.gz/ae3088d65e286bdc94ac5d722573537d6a6671bb":
-  version "0.8.0"
-  uid "1632d3df7ebf8cd86996a50e9e42721aea05b39c"
-  resolved "https://codeload.github.com/getsentry/fastify-otel/tar.gz/ae3088d65e286bdc94ac5d722573537d6a6671bb#1632d3df7ebf8cd86996a50e9e42721aea05b39c"
-  dependencies:
-    "@opentelemetry/core" "^1.30.1"
-    "@opentelemetry/instrumentation" "^0.57.2"
-    "@opentelemetry/semantic-conventions" "^1.28.0"
-    minimatch "^9"
-
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.13.0.tgz#fb907624df3256d04b9aa2df50d7aa97ec648748"
@@ -720,7 +710,7 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.28.0.tgz#337fb2bca0453d0726696e745f50064411f646d6"
   integrity sha512-lp4qAiMTD4sNWW4DbKLBkfiMZ4jbAboJIGOQr5DvciMRI494OapieI9qiODpOt0XBr1LjIDy1xAGAnVs5supTA==
 
-"@opentelemetry/semantic-conventions@^1.27.0", "@opentelemetry/semantic-conventions@^1.28.0", "@opentelemetry/semantic-conventions@^1.30.0":
+"@opentelemetry/semantic-conventions@^1.27.0", "@opentelemetry/semantic-conventions@^1.30.0":
   version "1.33.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.33.0.tgz#ec8ebd2ac768ab366aff94e0e7f27e8ae24fa49f"
   integrity sha512-TIpZvE8fiEILFfTlfPnltpBaD3d9/+uQHVCyC3vfdh6WfCXKhNFzoP5RyDDIndfvZC5GrA4pyEDNyjPloJud+w==
@@ -850,17 +840,16 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@sentry/core@9.20.0":
-  version "9.20.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.20.0.tgz#c002e3937fefbc79233025042e063da8d8cd90e7"
-  integrity sha512-YPDGkcMc5w8JEPoqW1DqfcaxtSz8FyP6+Z2KqjoEfUtqnjPis7YGo06e+XBCFDE+yZwurHB0DeerVi0cE47pxg==
+"@sentry/core@9.21.0":
+  version "9.21.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.21.0.tgz#973b7a445bbc8aa26ae473a110f4cf66adf0d6a5"
+  integrity sha512-K0a72Evg0fzc52Oe8R8Op5TyUMzORkk4ytt3G24lSnF4hh8NPf0m6VGkEUgQRPj27g2bF6tq9fCNsJILsf1PDA==
 
 "@sentry/node@^9.12.0":
-  version "9.20.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.20.0.tgz#367a0371f446fb23ef8f72566b8f0de04e3653b0"
-  integrity sha512-mkPFqJhCIvKeLHFHo11wOQdaeFD1Fa5qkVelOjsojPEcLfuDYA6/plCgrXmgWCGn2T1GaO3cjmDdCpvMLjt5ow==
+  version "9.21.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.21.0.tgz#702b360db0e37e8b869edbaa8a11620b0b070f6a"
+  integrity sha512-hoDO0ce8bwKIECfF1aUt7i8MECSle4d0J1ZG7Kcu3307qgXr4MOKL9Ictvut5CeWmDuzjlH6llvL7Xp471k/Mg==
   dependencies:
-    "@fastify/otel" "https://codeload.github.com/getsentry/fastify-otel/tar.gz/ae3088d65e286bdc94ac5d722573537d6a6671bb"
     "@opentelemetry/api" "^1.9.0"
     "@opentelemetry/context-async-hooks" "^1.30.1"
     "@opentelemetry/core" "^1.30.1"
@@ -891,16 +880,17 @@
     "@opentelemetry/sdk-trace-base" "^1.30.1"
     "@opentelemetry/semantic-conventions" "^1.30.0"
     "@prisma/instrumentation" "6.7.0"
-    "@sentry/core" "9.20.0"
-    "@sentry/opentelemetry" "9.20.0"
+    "@sentry/core" "9.21.0"
+    "@sentry/opentelemetry" "9.21.0"
     import-in-the-middle "^1.13.1"
+    minimatch "^9.0.0"
 
-"@sentry/opentelemetry@9.20.0":
-  version "9.20.0"
-  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.20.0.tgz#95a68af401c8635c50e0d9ae3d3a4b76ec4e22fd"
-  integrity sha512-G758j6i1SdtcYOJElLW9jXzXviVK+4SeD+fIJFd919ZT+L/NgsioPr6536SrE+aK3luv6tluRJubh7lhqufLkA==
+"@sentry/opentelemetry@9.21.0":
+  version "9.21.0"
+  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.21.0.tgz#ae9302cc9e5aaa8ddad8cfaa62c21b97ab5f0ba1"
+  integrity sha512-kLt3C2wxfzGaguwvcNYrjtti3aUEueyFN0i5hdpi3Msz4Xna9Vg+OWj2xuC1OAG2xi6fhLj9bb3te9n3KftP7A==
   dependencies:
-    "@sentry/core" "9.20.0"
+    "@sentry/core" "9.21.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -2772,7 +2762,7 @@ minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^9, minimatch@^9.0.0, minimatch@^9.0.5:
+minimatch@^9.0.0, minimatch@^9.0.5:
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.5.tgz#d74f9dd6b57d83d8e98cfb82133b03978bc929e5"
   integrity sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==
