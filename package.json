@@ -28,7 +28,7 @@
     "nearley": "2.20.1",
     "yaml": "2.8.0",
     "yargs": "17.7.2",
-    "zod": "3.25.48"
+    "zod": "3.25.49"
   },
   "devDependencies": {
     "@octokit/types": "13.10.0",
