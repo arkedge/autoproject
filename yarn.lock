@@ -840,15 +840,15 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@sentry/core@9.27.0":
-  version "9.27.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.27.0.tgz#e97d6957c243d95f9f05ccb553b937838bb500ea"
-  integrity sha512-Zb2SSAdWXQjTem+sVWrrAq9L6YYfxyoTwtapaE6C6qZBR5C8Uak0wcYww8StaCFH7dDA/PSW+VxOwjNXocrQHQ==
+"@sentry/core@9.28.0":
+  version "9.28.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.28.0.tgz#1922f474c7142831c3abd0b52c7a306d05ad6341"
+  integrity sha512-vzD9xhg9S864jxfCpq77feCE4y7iP2cZYsNMoTupl1vTUlmXlhp7XgF832fEMjEZq4vrPhaqCNsde7Sc3PAbaQ==
 
 "@sentry/node@^9.12.0":
-  version "9.27.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.27.0.tgz#0538930b23aafa347e1a2a7aa689450195f30fb0"
-  integrity sha512-EVyDfGRjMAL+SS0lFYK8BKZZiVfKBu6sItX/m2CGcpVLjTwhGxJQWdHlKJMEe8hIkjabME+VLL/mnkA3mINSfQ==
+  version "9.28.0"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-9.28.0.tgz#880d212cfa88730ab3492a8b1d2929e5280b6dc8"
+  integrity sha512-CIui2wthO7oBTRih9pGopKiPdPA/Kyg/orLkwVh6dfSzhSORFTzH1lJrCpoPTfUIZwilLBTwjINBENHGLA4u3A==
   dependencies:
     "@opentelemetry/api" "^1.9.0"
     "@opentelemetry/context-async-hooks" "^1.30.1"
@@ -880,17 +880,17 @@
     "@opentelemetry/sdk-trace-base" "^1.30.1"
     "@opentelemetry/semantic-conventions" "^1.34.0"
     "@prisma/instrumentation" "6.8.2"
-    "@sentry/core" "9.27.0"
-    "@sentry/opentelemetry" "9.27.0"
+    "@sentry/core" "9.28.0"
+    "@sentry/opentelemetry" "9.28.0"
     import-in-the-middle "^1.13.1"
     minimatch "^9.0.0"
 
-"@sentry/opentelemetry@9.27.0":
-  version "9.27.0"
-  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.27.0.tgz#9032a8ec4b6848d256796f84c2747f2a79e8c9d9"
-  integrity sha512-IHhDUdZU+gAUEupovcoUBgXfzQoMDh6n8epjLGpV5LxjiujM+byvvrBD7Witoz/ZilOFn585uvncW7juCe7grw==
+"@sentry/opentelemetry@9.28.0":
+  version "9.28.0"
+  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-9.28.0.tgz#6a0cebe4fb4fa200c3b1434063ee1d91dc4fedec"
+  integrity sha512-Zieujs3aPmfMm2vDFWnIwVTq/4lY5XM/q068xMG4IipHyIc/4rgZLWq40/C0ryLepoWjcym7c7QScgU4Y9fQjw==
   dependencies:
-    "@sentry/core" "9.27.0"
+    "@sentry/core" "9.28.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -968,7 +968,14 @@
   resolved "https://registry.yarnpkg.com/@types/nearley/-/nearley-2.11.5.tgz#9087e1634e1c90efb25d661390702381789685cb"
   integrity sha512-dM7TrN0bVxGGXTYGx4YhGear8ysLO5SOuouAWM9oltjQ3m9oYa13qi8Z1DJp5zxVMPukvQdsrnZmgzpeuTSEQA==
 
-"@types/node@*", "@types/node@22.15.31":
+"@types/node@*":
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.0.tgz#14a278ce74dd33993f2c4e5dd614760728c0fba8"
+  integrity sha512-yZQa2zm87aRVcqDyH5+4Hv9KYgSdgwX1rFnGvpbzMaC7YAljmhBET93TPiTd3ObwTL+gSpIzPKg5BqVxdCvxKg==
+  dependencies:
+    undici-types "~7.8.0"
+
+"@types/node@22.15.31":
   version "22.15.31"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.31.tgz#454f11e2061150135c8353d7f3b3b1823fca9f3f"
   integrity sha512-jnVe5ULKl6tijxUhvQeNbQG/84fHfg+yMak02cT8QVhBx/F05rAVxCGBYYTh2EKz22D6JF5ktXuNwdx7b9iEGw==
@@ -1256,9 +1263,9 @@ acorn-walk@^8.1.1:
   integrity sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==
 
 acorn@^8.14.0, acorn@^8.4.1, acorn@^8.9.0:
-  version "8.14.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
-  integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
+  version "8.15.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.15.0.tgz#a360898bc415edaac46c8241f6383975b930b816"
+  integrity sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==
 
 aggregate-error@^3.1.0:
   version "3.1.0"
@@ -3633,6 +3640,11 @@ undici-types@~6.21.0:
   version "6.21.0"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
+
+undici-types@~7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.8.0.tgz#de00b85b710c54122e44fbfd911f8d70174cd294"
+  integrity sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==
 
 universal-github-app-jwt@^1.1.2:
   version "1.1.2"
