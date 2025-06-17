@@ -80,6 +80,30 @@ type EventTarget = {
 };
 ```
 
+## GitHub App の設定
+
+### Webhook URL
+
+`/api/github/webhooks` 部分は固定です。
+
+```
+https://example.com/api/github/webhooks
+```
+
+### Permissions
+
+- Repository permissions
+  - Issues: Read-only
+  - Pull requests: Read-only
+- Organization permissions
+  - Members: Read-only
+  - Projects: Read and Write
+
+### Subscribe to events
+
+- Issues
+- Pull request
+
 ## Docker を使った実行方法
 
 簡単に Docker を使って検証する方法を説明します．
