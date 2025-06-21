@@ -27,7 +27,7 @@
     "mitt": "3.0.1",
     "nearley": "2.20.1",
     "yaml": "2.8.0",
-    "yargs": "17.7.2",
+    "yargs": "18.0.0",
     "zod": "3.25.67"
   },
   "devDependencies": {
