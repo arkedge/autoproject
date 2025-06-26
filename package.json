@@ -22,7 +22,7 @@
     "@prantlf/jsonlint": "16.0.0",
     "@sentry/node": "^9.12.0",
     "dotenv": "16.6.0",
-    "fuse.js": "6.6.2",
+    "fuse.js": "7.1.0",
     "log4js": "6.9.1",
     "mitt": "3.0.1",
     "nearley": "2.20.1",
