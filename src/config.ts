@@ -21,7 +21,7 @@ import {
   type TargetProjReject,
 } from "./types";
 import Fuse from "fuse.js";
-import assert from "assert";
+import assert from "node:assert";
 import { getLogger } from "log4js";
 import {
   type APred,

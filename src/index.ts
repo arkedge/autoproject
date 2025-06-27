@@ -1,5 +1,5 @@
 import "./sentry.server";
-import * as http from "http";
+import * as http from "node:http";
 import { App, createNodeMiddleware } from "@octokit/app";
 import { type Octokit } from "@octokit/core";
 import {

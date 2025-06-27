@@ -9,7 +9,7 @@ import type {
 import { TargetProjKind, WebhookEventKind } from "./types";
 import { type OctokitResponse } from "@octokit/types";
 import { processRules, getMatchedProj } from "./config";
-import * as fs from "fs";
+import * as fs from "node:fs";
 import { expect, it, vi } from "vitest";
 import { type LoggerCat } from "./util";
 import { type GetTeamMemberProp } from "./github";

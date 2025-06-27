@@ -1,6 +1,6 @@
-import * as fs from "fs";
+import * as fs from "node:fs";
 import log4js, { getLogger } from "log4js";
-import path from "path";
+import path from "node:path";
 import YAML, { isMap, isScalar } from "yaml";
 import { emitter } from "./emitter";
 import {
@@ -9,7 +9,7 @@ import {
   stringifyObjPath,
   type SynErrorPayload,
 } from "./types";
-import assert from "assert";
+import assert from "node:assert";
 import {
   type ConfigFormatKind,
   type EitherFormat,
