@@ -13,25 +13,9 @@ export default tseslint.config({
     love,
     eslintConfigPrettier,
   ],
-  plugins: {
-    "@typescript-eslint": tseslint.plugin,
-  },
   languageOptions: {
-    globals: {
-      ...Object.fromEntries(
-        Object.entries(globals.browser).map(([key]) => [key, "off"]),
-      ),
-      ...globals.node,
-    },
-
     ecmaVersion: "latest",
     sourceType: "module",
-
-    parser: tseslint.parser,
-    parserOptions: {
-      projectService: true,
-      tsconfigRootDir: import.meta.dirname,
-    },
   },
 
   files: ["**/*.ts"],
