@@ -1,5 +1,5 @@
 import { type Octokit } from "@octokit/core";
-import assert from "assert";
+import assert from "node:assert";
 import { type User as Login } from "./types.js";
 import { type GraphqlResponseError } from "@octokit/graphql";
 

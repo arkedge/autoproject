@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as fs from "node:fs";
 import { ErrorKind, processRules } from "./config";
 import {
   type SemErrorPayload,
@@ -11,7 +11,7 @@ import {
   nullPos,
 } from "./types";
 import { readAndParse, renameProp } from "./util";
-import assert from "assert";
+import assert from "node:assert";
 import { emitter } from "./emitter";
 import * as dotenv from "dotenv";
 import yargs from "yargs/yargs";
