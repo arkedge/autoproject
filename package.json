@@ -17,7 +17,7 @@
     "fix": "run-s fix:prettier fix:eslint"
   },
   "dependencies": {
-    "@octokit/app": "14.1.0",
+    "@octokit/app": "16.1.0",
     "@octokit/graphql-schema": "15.26.0",
     "@prantlf/jsonlint": "16.0.0",
     "@sentry/node": "^9.12.0",
@@ -31,7 +31,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@octokit/types": "13.10.0",
+    "@octokit/types": "14.1.0",
     "@tsconfig/node22": "22.0.2",
     "@types/nearley": "2.11.5",
     "@types/node": "22.18.0",
